@@ -1,0 +1,232 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Ingreso de Honorarios";
+}
+
+@* <div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+</div> *@
+
+
+<div class="card mt-4" id="test">
+    <div class="card-header">
+        <i class="fa-solid fa-address-card"></i> Ingreso de Honorarios
+    </div>
+    <div class="card-body">
+        <div class="col-md-12">
+            <form>
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                <i class="fa-solid fa-user-plus"></i>&nbsp Informacion Personal
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <div class="row g-4">
+                                    <div class="col-sm-2">
+                                        <label for="rut" class="form-label px-3">Rut</label>
+                                        <input type="text" class="form-control" id="rut" maxlength="12" required>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label for="nombres" class="form-label px-3">Nombres</label>
+                                        <input type="text" class="form-control" id="nombres" required>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="apellido1" class="form-label px-3">Apellido Paterno</label>
+                                        <input type="text" class="form-control" id="apellido1" required>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="apellido2" class="form-label px-3">Apellido Materno</label>
+                                        <input type="text" class="form-control" id="apellido1" required>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="fecha" class="form-label px-3">Fecha Nacimiento</label>
+                                        <input type="date" class="form-control" id="fecha" required>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="validationDefault04" class="form-label -px-3">Genero</label>
+                                        <select class="form-select" id="validationDefault04" required>
+                                            <option selected disabled value="">Genero</option>
+                                            <option>Femenino</option>
+                                            <option>Masculino</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="validationDefault04" class="form-label -px-3">Estado Civil</label>
+                                        <select class="form-select" id="validationDefault04" required>
+                                            <option selected disabled value="">Estado Civil</option>
+                                            <option>Soltero</option>
+                                            <option>Casado</option>
+                                            <option>Viudo</option>
+                                            <option>Separado</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="validationDefault04" class="form-label px-3">Estudios</label>
+                                        <select class="form-select" id="validationDefault04" required>
+                                            <option selected disabled value="">Estudios</option>
+                                            <option>Educacion Basica</option>
+                                            <option>Educacion Media</option>
+                                            <option>Educacion Superior</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="profesion" class="form-label px-3">Profesion</label>
+                                        <input type="text" class="form-control" id="profesion" maxlength="20" required>
+                                    </div>
+                                    <div class="col-sm-3 form-check">
+                                        <label class="form-check-label px-3" for="invalidCheck2">Servicio Militar</label>
+                                        <input class="form-check-input" type="checkbox" value="true" id="invalidCheck2" required>
+                                        <label for="adicional" class="form-label">Reparticion</label>
+                                        <input type="text" class="form-control" id="adicional" maxlength="20" disabled>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label for="email" class="form-label px-3">Correo Electronico</label>
+                                        <input type="email" class="form-control" id="email" placeholder="alguien@dominio.algo" required>
+                                    </div>
+                                    <div class="col-sm-3 offset-2 ">
+                                        <label for="validationDefault04" class="form-label px-3">Nacionalidad</label>
+                                        <select class="form-select" id="validationDefault04" required>
+                                            <option selected disabled value="">Seleccione un Pais</option>
+                                            <option>Chile</option>
+                                            <option>Argentina</option>
+                                            <option>Brasil</option>
+                                            <option>Colombia</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-13">
+                                        <label for="direccion" class="form-label px-3">Direccion</label>
+                                        <input type="text" class="form-control" id="direccion" maxlength="200" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                <i class="fa-solid fa-money-check-dollar"></i>&nbsp Forma de Pago
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="row g-4">
+                                    <div class="col-sm-2 offset-3 form-check form-check-inline">
+                                        <label class="form-check-label px-3" for="invalidCheck2">Cheque</label>
+                                        <input class="form-check-input" type="radio" value="true" id="invalidCheck2">
+                                    </div>
+                                    <div class="col-sm-2 form-check form-check-inline">
+                                        <label class="form-check-label px-3" for="invalidCheck2">Banco</label>
+                                        <input class="form-check-input" type="radio" value="option2" id="invalidCheck2">
+                                    </div>
+                                    <div class="col-sm-2 form-check form-check-inline">
+                                        <label class="form-check-label px-3" for="invalidCheck2">Nuevo</label>
+                                        <input class="form-check-input" type="radio" value="true" id="invalidCheck2">
+                                    </div>
+
+                                </div> 
+                                <div class="card pb-4">
+                                    <div class="card-header">
+                                        <strong>Pago Banco</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="col-sm-3">
+                                            <label for="validationDefault04" class="form-label px-3">Banco</label>
+                                            <select class="form-select" id="validationDefault04" required>
+                                                <option selected disabled value="">Seleccione un Banco</option>
+                                                <option>Banco Estado</option>
+                                                <option>Banco Chile</option>
+                                                <option>Santander</option>
+                                                <option>Itau</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3 offset-2 ">
+                                            <label for="validationDefault04" class="form-label px-3">Nacionalidad</label>
+                                            <select class="form-select" id="validationDefault04" required>
+                                                <option selected disabled value="">Seleccione un Pais</option>
+                                                <option>Chile</option>
+                                                <option>Argentina</option>
+                                                <option>Brasil</option>
+                                                <option>Colombia</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-check">
+                                                <label class="form-check-label px-3" for="invalidCheck2">Titular Cuenta Corriente</label>
+                                                <input class="form-check-input" type="checkbox" value="true" id="invalidCheck2">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="rut" class="form-label px-3">Rut</label>
+                                            <input type="text" class="form-control" id="rut" maxlength="12" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 pt-3 text-sm-end">
+                    <button class="btn btn-primary" type="submit">Crear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@* <form class="row g-3">
+            <div class="col-md-3">
+            <label for="rut" class="form-label">Rut</label>
+            <input type="text" class="form-control" id="rut" maxlength="12" required>
+            </div>
+            <div class="col-md-3">
+            <label for="nombres" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="nombres" required>
+            </div>
+            <div class="col-md-3">
+            <label for="apellido1" class="form-label">Apellido Paterno</label>
+            <input type="text" class="form-control" id="apellido1" required>
+            </div>
+            <div class="col-md-3">
+            <label for="apellido2" class="form-label">Apellido Materno</label>
+            <input type="text" class="form-control" id="apellido1" required>
+            </div>
+            <div class="col-md-6">
+            <label for="validationDefault03" class="form-label">City</label>
+            <input type="text" class="form-control" id="validationDefault03" required>
+            </div>
+            <div class="col-md-3">
+            <label for="validationDefault04" class="form-label">State</label>
+            <select class="form-select" id="validationDefault04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
+            </select>
+            </div>
+            <div class="col-md-3">
+            <label for="validationDefault05" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="validationDefault05" required>
+            </div>
+            <div class="col-12">
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+            <label class="form-check-label" for="invalidCheck2">
+            Agree to terms and conditions
+            </label>
+            </div>
+            </div>
+            <div class="dropdown"
+            <div class="col-12">
+            <button class="btn btn-primary" type="submit">Crear</button>
+            </div>
+            </form> *@
+
+@section Scripts{
+    @* <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script> *@
+
+}

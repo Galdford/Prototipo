@@ -1,0 +1,86 @@
+﻿@{
+}
+
+<div class="card mt-4">
+    <div class="card-header">
+        <i class="fa-solid fa-file-contract"></i> Lista de Honorarios
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-primary openBtn" data-bs-toggle="modal" data-bs-target="#NuevoHonorario">
+                    Crear Nuevo Registro
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="NuevoHonorario" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Nuevo Honorario</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin Modal -->
+            </div>
+        </div>
+            <hr />
+        
+        <table id="honorarios" class="table table-hover table-sm" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Rut</th>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11111111-1</td>
+                    <td>Juan Antonio</td>
+                    <td>Perez</td>
+                    <td>Gatica</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        oTable = $('#honorarios').dataTable();
+
+        function Add() {
+
+            var data = [
+                $('#input1').val(),
+                $('#input2').val(),
+                $('#input3').val(),
+                $('#input4').val()
+            ];
+
+
+            oTable.fnAddData(data);
+        };
+    </script>
+
+    <script>
+        $('.openBtn').on('click', function () {
+            $('.modal-body').load('@Url.Action("Ingresar","Honorarios") #test', function () {
+                $('#NuevoHonorario').modal({ show: true });
+            });
+        });
+    </script>
+    
+}
